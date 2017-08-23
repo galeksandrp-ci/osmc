@@ -1,0 +1,9 @@
+language: c
+addons:
+  apt:
+    packages:
+    - build-essential
+    - git
+script:
+  - cd filesystem/osmc-rbp1-filesystem
+  - make
