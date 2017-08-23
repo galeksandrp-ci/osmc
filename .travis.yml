@@ -6,5 +6,5 @@ addons:
     - build-essential
     - git
 script:
-  - cd filesystem/osmc-rbp1-filesystem
-  - make
+  - cd installer/target
+  - make rbp1
