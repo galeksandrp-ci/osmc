@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: galeksandrp/travistest:docker-ubuntu-trusty
+    steps:
+      - checkout
+      - run: cd installer/target
+      - run: make rbp1
+      - run: mkdir -p /tmp/artifacts
+      - run: cp buildroot-*/output/images/OSMC_TGT_rbp1_*.img.gz /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: /circle-.*/
