@@ -7,3 +7,4 @@ addons:
 script:
   - cd filesystem/osmc-rbp1-filesystem
   - make
+
