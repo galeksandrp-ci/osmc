@@ -5,8 +5,7 @@ jobs:
       - image: galeksandrp/travistest:docker-ubuntu-trusty
     steps:
       - checkout
-      - run: cd installer/target
-      - run: make rbp1
+      - run: cd installer/target && make rbp1
       - run: mkdir -p /tmp/artifacts
       - run: cp buildroot-*/output/images/OSMC_TGT_rbp1_*.img.gz /tmp/artifacts
       - store_artifacts:
