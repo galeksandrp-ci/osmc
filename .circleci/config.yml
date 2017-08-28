@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: galeksandrp/travistest:docker-ubuntu-trusty
+    machine: true
     steps:
       - checkout
       - run: cd installer/target && make rbp1
